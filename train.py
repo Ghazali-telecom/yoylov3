@@ -51,7 +51,7 @@ if __name__ == "__main__":
     train_path = data_config["train"]
     valid_path = data_config["valid"]
     #class_names = ["damage"]
-    class_names = data_config["names"]
+    class_names = load_classes(data_config["names"])
 
     # Initialize model
     model = Darknet(opt.model_config).to(device)
