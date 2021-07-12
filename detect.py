@@ -25,6 +25,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--image_folder", type=str, default="samples", help="path to dataset")
     parser.add_argument("--model_config", type=str, default="config/yolov3-custom.cfg", help="Model Configuration File path")
+    parser.add_argument("--classes_names", type=str, default="config/classes.names", help="Classse Names File path")
     parser.add_argument("--weights_path", type=str, default="TrainedModel/yolov3_ckpt_98_n1.pth", help="path to weights file")
     parser.add_argument("--conf_thres", type=float, default=0.7, help="object confidence threshold")
     parser.add_argument("--nms_thres", type=float, default=0.2, help="iou thresshold for non-maximum suppression")
@@ -57,8 +58,8 @@ if __name__ == "__main__":
         num_workers=opt.n_cpu,
     )
    
-    classes = ["damage"]  # Extracts class labels from file
-
+    #classes = ["damage"]  # Extracts class labels from file
+    classes = load_classes(opt.classes_names)
     Tensor = torch.cuda.FloatTensor if torch.cuda.is_available() else torch.FloatTensor
 
     imgs = []  # Stores image paths
