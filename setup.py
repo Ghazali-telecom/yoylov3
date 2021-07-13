@@ -8,6 +8,6 @@ setup(
     author_email='ghazali.yfm@gmail.com',
     description='Description of my package',
     packages=find_packages(),    
-    install_requires=['numpy >=1.19.0','torch==1.9.0','torchvision==0.10.0','matplotlib ==3.4.2','tensorboard>=1.5.0','terminaltables==3.1.0'
+    install_requires=['numpy >=1.19.0','torch>=1.7.0','torchvision>=0.9.0','matplotlib ==3.4.2','tensorboard>=1.5.0','terminaltables==3.1.0'
     ,'pillow==8.3.1','tqdm==4.61.2','tensorflow-probability==0.13.0','tensorflow-gpu==2.4.1','pytorch-lightning==1.3.8'],
 )
